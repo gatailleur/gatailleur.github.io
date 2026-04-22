@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Gabriel Tailleur</title>
-    <link>https://gatailleur.github.io/posts/</link>
+    <link>https://gabriel-tailleur.com/posts/</link>
     <description>Recent content in Posts on Gabriel Tailleur</description>
     <generator>Hugo -- 0.151.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gatailleur.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gabriel-tailleur.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New Working Paper on the Digital Euro</title>
-      <link>https://gatailleur.github.io/posts/hello-world/</link>
+      <link>https://gabriel-tailleur.com/posts/hello-world/</link>
       <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://gatailleur.github.io/posts/hello-world/</guid>
+      <guid>https://gabriel-tailleur.com/posts/hello-world/</guid>
       <description>&lt;p&gt;I’ve just released a new paper analyzing ideological drivers of sentiment toward the digital euro.&lt;br&gt;
-You can find the full text &lt;a href=&#34;https://gatailleur.github.io/files/digital-euro-paper.pdf&#34;&gt;here&lt;/a&gt; or on SSRN.&lt;/p&gt;</description>
+You can find the full text &lt;a href=&#34;https://gabriel-tailleur.com/files/digital-euro-paper.pdf&#34;&gt;here&lt;/a&gt; or on SSRN.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
