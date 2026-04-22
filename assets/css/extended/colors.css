@@ -1,0 +1,11 @@
+/* assets/css/extended/colors.css */
+
+/* Sky blue / turquoise bold */
+strong, b {
+  color: #1BA9D9; /* try #40E0D0 for turquoise */
+  font-weight: 600;
+}
+
+/* Optional: match link color */
+a { color: #1BA9D9; }
+a:hover { color: #138AA8; text-decoration: underline; }

@@ -1,0 +1,266 @@
+/* ========== Portrait / About hero ========== */
+.portrait{
+  display:block;
+  margin:0 auto 1rem auto;
+  width:200px;
+  border-radius:50%;
+  box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+.coauthor-inline {
+  color: #111;          /* black */
+  font-weight: 400;     /* not bold */
+  font-size: 0.95em;    /* slightly smaller */
+  margin-left: 0.35rem;
+}
+
+.about-hero{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  margin-bottom:1.5rem;
+}
+
+.link-list{
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  min-width:260px;
+}
+
+.link-box{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  padding:.75rem 1.2rem;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.05);
+  text-decoration:none;
+  max-width:480px;
+  transition:transform .06s ease, box-shadow .06s ease, border-color .06s ease;
+  color:#111;
+}
+.link-box:hover{
+  border-color:#d1d5db;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  transform:translateY(-1px);
+}
+.link-highlight{ color:#1BA9D9; font-weight:600; }
+
+/* ========== Utilities / general ========== */
+.post-title:empty{ display:none; }
+
+.loose ul, .loose ol{ margin-top:.5rem; }
+.loose li{ margin-bottom:.5rem; }
+
+/* Year headings (Talks) */
+.loose h3, .loose h4{
+  color:#1BA9D9;
+  font-weight:600;
+  margin-top:1.5rem;
+}
+
+/* Teaching content line (bold, slightly smaller, indented) */
+.course-content{
+  display:block;
+  font-size:.95rem;
+  color:#444;
+  margin-top:.25rem;
+  margin-left:1rem;
+  font-weight:600;   /* bold */
+  font-style:normal; /* not italic */
+}
+
+/* ========== Publications card (single page) ========== */
+.pubcard{ margin-bottom:2.5rem; }
+
+.pub-img img{
+  max-width:550px;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  margin-top:1rem;
+}
+
+.pub-actions a{
+  display:inline-block;
+  padding:.35rem .6rem;
+  border:1px solid #e5e7eb;
+  border-radius:.5rem;
+  text-decoration:none;
+  margin-right:.5rem;
+  font-size:.95rem;
+}
+.pub-actions a:hover{ text-decoration:underline; }
+
+/* ========== Publications list: Abstract toggle ========== */
+.abs-toggle{
+  margin-top:.5rem;
+  border:1px dashed #e5e7eb;
+  border-radius:8px;
+  padding:.45rem .7rem;
+  background:#fff;
+}
+.abs-toggle summary{
+  cursor:pointer;
+  list-style:none;
+  font-weight:600;
+  color:#1BA9D9;
+  font-size:.95rem;
+}
+.abs-toggle summary::-webkit-details-marker{ display:none; }
+.abs-toggle .abs-body{
+  margin-top:.35rem;
+  color:#111;
+  line-height:1.55;
+  font-size:.95rem;
+}
+.abs-arrow{
+  display:inline-block;
+  transition:transform .12s ease;
+  margin-left:.25rem;
+}
+
+/* Unclamp excerpts so <details> can expand on list page */
+.entry-content.unclamp{
+  display:block !important;
+  overflow:visible !important;
+  max-height:none !important;
+  -webkit-line-clamp:unset !important;
+  -webkit-box-orient:unset !important;
+}
+
+/* ========== Responsive ========== */
+@media (max-width:768px){
+  .about-hero{ flex-direction:column; align-items:flex-start; }
+  .portrait{ width:160px; }
+}
+
+/* =========================================================
+   Publications list: thumbnail + text layout (larger box)
+   ========================================================= */
+.pub-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.8rem;                     /* more space between image and text */
+  margin-bottom: 2.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;             /* rounder corners */
+  padding: 1.5rem 2rem;            /* bigger padding inside box */
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05); /* soft shadow */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.pub-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.pub-thumb img {
+  width: px;                   /* bigger image */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.pub-info {
+  flex: 1;
+}
+
+/* Make the abstract box breathe more */
+.abs-toggle {
+  margin-top: 0.8rem;
+  padding: 0.6rem 0.9rem;
+}
+
+/* On mobile: stack nicely */
+@media (max-width: 768px) {
+  .pub-list-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .pub-thumb img {
+    width: 90%;
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* =========================================================
+   Publications section: wider layout for full boxes
+   ========================================================= */
+body.section-publications .main {
+  max-width: 1150px;    /* wider than the default 800px */
+  margin: 0 auto;
+}
+
+/* Make publication boxes stretch nicely across the new width */
+.pub-list-item {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.pub-thumb img {
+  width: 220px;   /* keep the same image size */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.pub-info {
+  flex: 1;
+  max-width: calc(100% - 180px);
+}
+
+/* Section headers for publications */
+.pub-section{
+  margin: 2rem 0 .75rem;
+  color: #1BA9D9;
+  font-weight: 700;
+}
+
+/* SSRN mini badge/link */
+.pub-mini-actions a{
+  display: inline-block;
+  margin-top: .25rem;
+  padding: .2rem .5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: .4rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1BA9D9;      /* blue/turquoise */
+}
+.pub-mini-actions a:hover{
+  text-decoration: underline;
+}
+
+/* ========== Working paper alert link ========== */
+.wp-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  text-decoration: none; /* only underline the text span */
+}
+
+.wp-text {
+  color: #000;                 /* black text */
+  text-decoration: underline;  /* underline only the text */
+  font-weight: 500;
+}
+
+.wp-link:hover .wp-text {
+  opacity: 0.8;
+}

@@ -1,0 +1,24 @@
+<div class="pubcard">
+  <div class="pub-text">
+    <h3 style="margin:0 0 .25rem 0;">{{ .Get "title" }}</h3>
+    {{ with .Get "authors" }}<div><em>{{ . }}</em></div>{{ end }}
+    {{ with .Get "venue" }}<div style="margin:.25rem 0 .5rem 0;">{{ . }}</div>{{ end }}
+
+    <div class="pub-actions" style="margin:.4rem 0 0 0;">
+      {{ with .Get "pdf" }}<a href="{{ . }}" target="_blank">PDF</a>{{ end }}
+      {{ with .Get "doi" }}<a href="{{ . }}" target="_blank">DOI</a>{{ end }}
+      {{ with .Get "code" }}<a href="{{ . }}" target="_blank">Code</a>{{ end }}
+      {{ with .Get "data" }}<a href="{{ . }}" target="_blank">Data</a>{{ end }}
+    </div>
+
+    <div style="margin-top:.6rem;">
+      {{ .Inner }}
+    </div>
+  </div>
+
+  {{ with .Get "img" }}
+  <div class="pub-img" style="margin-top:1rem;text-align:center;">
+    <img src="{{ . }}" alt="{{ $.Get "title" }}">
+  </div>
+  {{ end }}
+</div>

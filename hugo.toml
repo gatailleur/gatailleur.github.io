@@ -1,0 +1,43 @@
+baseURL = "https://gatailleur.github.io/"
+languageCode = "en-us"
+title = "Gabriel Tailleur"
+theme = "PaperMod"
+
+# New Hugo pagination syntax
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+
+# Allow raw HTML in Markdown (so <img src="/images/me.jpg"> works)
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+# PaperMod general params (feel free to adjust later)
+[params]
+  defaultTheme = "light"
+  disableSpecial1stPost = true  # hides the big first-post card on home
+  showReadingTime = false
+  comments = false
+
+[menu]
+  [[menu.main]]
+    name = "Research"
+    url = "/publications/"   # keep using your Publications section, labeled as Research
+    weight = 1
+
+  [[menu.main]]
+    name = "Talks"
+    url = "/talks/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Teaching"
+    url = "/teaching/"
+    weight = 3
+
+  [[menu.main]]
+    name = "CV"
+    url = "/files/cv.pdf"
+    weight = 4

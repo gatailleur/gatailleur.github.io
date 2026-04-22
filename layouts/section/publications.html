@@ -1,0 +1,87 @@
+{{ define "main" }}
+<main class="main">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  
+
+  {{ $pages := .Pages }}
+  {{ $wip := where $pages "Params.status" "wip" }}
+  {{ $pub := where $pages "Params.status" "published" }}
+
+  {{ if gt (len $wip) 0 }}
+    <h2 class="pub-section">Work in progress</h2>
+    {{ range $wip.ByDate.Reverse }}
+      <article class="post-entry pub-list-item">
+        {{ $p := . }}
+        {{ with $p.Params.image }}
+          <div class="pub-thumb">
+            <a href="{{ $p.RelPermalink }}"><img src="{{ . | relURL }}" alt="Thumbnail for {{ $p.Title }}"></a>
+          </div>
+        {{ end }}
+
+        <div class="pub-info">
+          <header class="entry-header">
+            <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+{{ with $p.Params.subtitle }}
+  <div class="pub-subtitle">{{ . }}</div>
+{{ end }}
+            {{ with $p.Params.ssrn }}
+  <div class="pub-mini-actions">
+    <a href="{{ . }}" target="_blank" rel="noopener" class="wp-link">
+      🚨 <span class="wp-text">Check out the working paper!</span>
+    </a>
+  </div>
+{{ end }}
+
+
+
+          </header>
+
+          <section class="entry-content unclamp">
+            <details class="abs-toggle">
+              <summary>Abstract <span class="abs-arrow">▸</span></summary>
+              <div class="abs-body">{{ .Summary | plainify }}</div>
+            </details>
+          </section>
+        </div>
+      </article>
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $pub) 0 }}
+    <h2 class="pub-section">Published papers</h2>
+    {{ range $pub.ByDate.Reverse }}
+      <article class="post-entry pub-list-item">
+        {{ $p := . }}
+        {{ with $p.Params.image }}
+          <div class="pub-thumb">
+            <a href="{{ $p.RelPermalink }}"><img src="{{ . | relURL }}" alt="Thumbnail for {{ $p.Title }}"></a>
+          </div>
+        {{ end }}
+
+        <div class="pub-info">
+          <header class="entry-header">
+            <h2 class="entry-title">
+  <a href="{{ .RelPermalink }}">
+    {{ .Title }}
+    {{ with .Params.coauthors }}
+      <span class="coauthor-inline"> {{ . }}</span>
+    {{ end }}
+  </a>
+</h2>
+            {{ with .Date }}<div class="entry-meta">{{ .Format "2006" }}</div>{{ end }}  <!-- year only -->
+          </header>
+
+          <section class="entry-content unclamp">
+            <details class="abs-toggle">
+              <summary>Abstract <span class="abs-arrow">▸</span></summary>
+              <div class="abs-body">{{ .Summary | plainify }}</div>
+            </details>
+          </section>
+        </div>
+      </article>
+    {{ end }}
+  {{ end }}
+</main>
+{{ end }}
