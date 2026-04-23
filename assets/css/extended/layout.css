@@ -30,18 +30,32 @@
   flex-wrap: wrap;
 }
 
-/* Hide heading anchor hashtags */
-.anchor {
+/* Hide heading anchor hashtags everywhere */
+.anchor,
+.post-content .anchor,
+.entry-content .anchor,
+.main .anchor,
+h1 .anchor,
+h2 .anchor,
+h3 .anchor,
+h4 .anchor,
+h5 .anchor,
+h6 .anchor {
   display: none !important;
 }
 
-#menu a {
-  font-size: 1.3rem;
-  font-weight: 600;
+/* Make top menu more visible everywhere */
+#menu a,
+nav#menu a,
+header #menu a {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
 }
 
-#menu li + li {
-  margin-left: 1.5rem;
+#menu li + li,
+nav#menu li + li,
+header #menu li + li {
+  margin-left: 1.5rem !important;
 }
 
 .pub-label {
