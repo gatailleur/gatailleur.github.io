@@ -11,9 +11,9 @@ This paper studies how ideology and economic conditions shape political preferen
 
 **Under review -- Working paper available below**
 
-<!--more-->
-
-{{< pubcard
+<!--{{< pubcard
     pdf="/files/paper2.pdf"
 >}}
-{{< /pubcard >}}
+{{< /pubcard >}}-->
+
+

@@ -30,6 +30,20 @@
   flex-wrap: wrap;
 }
 
+/* Hide heading anchor hashtags */
+.anchor {
+  display: none !important;
+}
+
+#menu a {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#menu li + li {
+  margin-left: 1.5rem;
+}
+
 .pub-label {
   font-size: 0.95rem;
   color: #111;
