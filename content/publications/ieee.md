@@ -16,4 +16,6 @@ The metaverse has gained popularity in recent years but remains technically nasc
 
 <!--more-->
 
-**This paper is part of a joint research project with the PcEn Chair, Paris 1 Panthéon-Sorbonne University**
+<!--more-->
+
+This paper is part of a joint research project with the [**PcEn Chair**](https://pcen.fr/), *Paris 1 Panthéon-Sorbonne University*.

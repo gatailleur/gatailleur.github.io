@@ -30,32 +30,81 @@
   flex-wrap: wrap;
 }
 
-/* Hide heading anchor hashtags everywhere */
-.anchor,
-.post-content .anchor,
-.entry-content .anchor,
-.main .anchor,
-h1 .anchor,
-h2 .anchor,
-h3 .anchor,
-h4 .anchor,
-h5 .anchor,
-h6 .anchor {
+/* Hide heading anchor hashtags */
+.anchor {
   display: none !important;
 }
 
-/* Make top menu more visible everywhere */
-#menu a,
-nav#menu a,
-header #menu a {
-  font-size: 1.3rem !important;
-  font-weight: 600 !important;
+#menu a {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
-#menu li + li,
-nav#menu li + li,
-header #menu li + li {
-  margin-left: 1.5rem !important;
+#menu li + li {
+  margin-left: 1.5rem;
+}
+
+.social-box {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.social-link:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.linkedin-only,
+.linkedin-only:hover,
+.scholar-link,
+.scholar-link:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 4px;
+  background: #1BA9D9;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.scholar-icon {
+  background: #1BA9D9;
+  color: white;
+}
+
+.scholar-text {
+  color: #111;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.blue-link {
+  color: #1BA9D9;
+  text-decoration: underline;
+  text-decoration-color: #1BA9D9;
+  font-weight: inherit;
 }
 
 .pub-label {
