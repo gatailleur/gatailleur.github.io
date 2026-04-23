@@ -1,5 +1,5 @@
 ---
-title: "What Drives Monetary Preferences? Evidence from Cryptocurrencies and the Digital Euro in the European Parliament"
+title: "What Drives Monetary Preferences? Evidence from MEPs' Social Media Discourse on Cryptocurrencies and the Digital Euro"
 date: 2026-03-01
 draft: false
 status: "wip"

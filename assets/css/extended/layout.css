@@ -21,6 +21,35 @@
   margin-bottom:1.5rem;
 }
 
+.pub-journal {
+  margin-top: 0.4rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pub-label {
+  font-size: 0.95rem;
+  color: #111;
+}
+
+.doi-box {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #1BA9D9;
+  font-weight: 600;
+}
+
+.doi-box:hover {
+  text-decoration: underline;
+}
+
 .link-list{
   display:flex;
   flex-direction:column;

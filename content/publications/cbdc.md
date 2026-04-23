@@ -1,6 +1,6 @@
 ---
-title: "Minting Words"
-coauthors: "with L. Malherbe"
+title: "Minting Words: Why Central Banks Develop CBDCs"
+coauthors_line: "with Léo Malherbe"
 date: 2026-04-01
 draft: false
 status: "wip"
