@@ -9,6 +9,9 @@ theme = "PaperMod"
 
 enableRobotsTXT = true
 
+[params]
+description = "PhD candidate in economics specializing in NLP, political economy and central banking."
+
 # Allow raw HTML in Markdown (so <img src="/images/me.jpg"> works)
 [markup]
   [markup.goldmark.renderer]
