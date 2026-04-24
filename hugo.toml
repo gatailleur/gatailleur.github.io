@@ -21,6 +21,7 @@ enableRobotsTXT = true
   disableSpecial1stPost = true  # hides the big first-post card on home
   showReadingTime = false
   comments = false
+  ShowBreadCrumbs = false
 
 [menu]
   [[menu.main]]
