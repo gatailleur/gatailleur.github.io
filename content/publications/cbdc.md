@@ -5,7 +5,7 @@ draft: false
 status: "working-paper"
 weight: 1
 paper_url: "https://drive.google.com/file/d/13Shcmu08TmuaqNNbue0Bl8hkQ3acy2lm/view"
-image: "/images/cbdc_topics_worldmap.png"
+image: "/images/cbdc_topics_worldmap_with_research.png"
 coauthors_line: "with Léo Malherbe (KEDGE Business School, Bordeaux)"
 ---
 
