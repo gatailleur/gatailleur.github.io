@@ -1,11 +1,11 @@
 /* assets/css/extended/colors.css */
 
-/* Sky blue / turquoise bold */
+/* Orange accent for emphasis */
 strong, b {
-  color: #1BA9D9; /* try #40E0D0 for turquoise */
+  color: #b6511d;
   font-weight: 600;
 }
 
 /* Optional: match link color */
-a { color: #1BA9D9; }
-a:hover { color: #138AA8; text-decoration: underline; }
+a { color: #b6511d; }
+a:hover { color: #903d14; text-decoration: underline; }

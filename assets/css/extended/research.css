@@ -1,8 +1,8 @@
 /* A wide, quiet reading layout, scoped to Research. */
 .research-page {
-  --research-accent: #117e9f;
-  --research-muted: #555e68;
-  --research-rule: #dce3e8;
+  --research-accent: #b6511d;
+  --research-muted: #655c55;
+  --research-rule: #e7ded7;
   padding-bottom: 1rem;
   color: var(--primary);
 }
@@ -11,9 +11,9 @@
 
 .dark .research-page,
 .dark .research-single {
-  --research-accent: #71c9e2;
-  --research-muted: #b8c1cc;
-  --research-rule: #3d4650;
+  --research-accent: #f0ad78;
+  --research-muted: #ccbfb5;
+  --research-rule: #4d4037;
 }
 
 .research-header { margin: .75rem 0 2.75rem; }
@@ -78,7 +78,7 @@
 .research-coauthors,
 .research-venue {
   margin-top: .5rem;
-  color: var(--research-muted, #555e68);
+  color: var(--research-muted, #655c55);
   font-size: .93rem;
   line-height: 1.6;
 }
@@ -91,14 +91,14 @@
   display: inline-block;
   padding: .03rem .28rem;
   border-radius: 4px;
-  background: #e9f6fb;
-  color: #086f92;
+  background: #fff1e6;
+  color: #a54617;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: .18em;
 }
 
-.research-paper-link:hover { background: #d1edf7; color: #075d7b; }
+.research-paper-link:hover { background: #ffe2cc; color: #843612; }
 
 .research-thumbnail {
   display: flex;
@@ -134,7 +134,7 @@
 .research-abstract-body {
   max-width: 82ch;
   padding: .75rem 0 .25rem 1rem;
-  border-left: 2px solid #cce6ef;
+  border-left: 2px solid #eec9af;
   color: var(--primary);
   line-height: 1.8;
   overflow-wrap: anywhere;
@@ -155,20 +155,20 @@
 .research-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .8rem; }
 .research-links a {
   padding: .25rem .65rem;
-  border: 1px solid #cbdce3;
+  border: 1px solid #e7ccb9;
   border-radius: 5px;
-  color: #117e9f;
+  color: #b6511d;
   font-size: .85rem;
   font-weight: 500;
 }
 
 .research-single .post-header { margin-top: 1.5rem; }
-.research-back { display: inline-block; padding: .5rem 0; color: #117e9f; font-size: .9rem; }
+.research-back { display: inline-block; padding: .5rem 0; color: #b6511d; font-size: .9rem; }
 
 .research-page a:focus-visible,
 .research-single a:focus-visible,
 .research-abstract summary:focus-visible {
-  outline: 2px solid #117e9f;
+  outline: 2px solid #b6511d;
   outline-offset: 4px;
   border-radius: 3px;
 }

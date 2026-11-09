@@ -1,21 +1,21 @@
-/* Talks and Teaching share the hierarchy and blue tones used in Research. */
+/* Talks and Teaching share the hierarchy and warm accent tones used in Research. */
 .academic-page {
-  --academic-accent: #117e9f;
-  --academic-title: #165c73;
-  --academic-muted: #555e68;
-  --academic-rule: #dce3e8;
-  --academic-tint: #e9f6fb;
+  --academic-accent: #b6511d;
+  --academic-title: #8c3d1d;
+  --academic-muted: #655c55;
+  --academic-rule: #e7ded7;
+  --academic-tint: #fff1e6;
   --academic-surface: #fff;
   color: var(--primary);
   padding-bottom: 1rem;
 }
 
 .dark .academic-page {
-  --academic-accent: #71c9e2;
-  --academic-title: #a3deef;
-  --academic-muted: #b8c1cc;
-  --academic-rule: #3d4650;
-  --academic-tint: #223b46;
+  --academic-accent: #f0ad78;
+  --academic-title: #f4c5a0;
+  --academic-muted: #ccbfb5;
+  --academic-rule: #4d4037;
+  --academic-tint: #3b2b22;
   --academic-surface: var(--entry);
 }
 

@@ -1,18 +1,18 @@
 /* Homepage only: profile, a primary CV action, and quiet contact links. */
 .home-profile {
-  --home-accent: #117e9f;
-  --home-muted: #555e68;
-  --home-rule: #dce3e8;
-  --home-tint: #e9f6fb;
+  --home-accent: #b6511d;
+  --home-muted: #655c55;
+  --home-rule: #e7ded7;
+  --home-tint: #fff1e6;
   color: var(--primary);
   padding: 1.75rem 0 1rem;
 }
 
 .dark .home-profile {
-  --home-accent: #71c9e2;
-  --home-muted: #b8c1cc;
-  --home-rule: #3d4650;
-  --home-tint: #223b46;
+  --home-accent: #f0ad78;
+  --home-muted: #ccbfb5;
+  --home-rule: #4d4037;
+  --home-tint: #3b2b22;
 }
 
 .home-profile-hero {
@@ -70,9 +70,9 @@
   min-height: 44px;
   margin-top: 1.2rem;
   padding: .55rem 1.05rem;
-  border: 1px solid #117e9f;
+  border: 1px solid #b6511d;
   border-radius: 6px;
-  background: #117e9f;
+  background: #b6511d;
   color: #fff;
   font-size: .9rem;
   font-weight: 500;
@@ -81,8 +81,8 @@
 }
 
 .home-profile-cv:hover {
-  background: #0c6986;
-  border-color: #0c6986;
+  background: #933f16;
+  border-color: #933f16;
   color: #fff;
   text-decoration: none;
 }

@@ -1,9 +1,9 @@
 /* Shared frame, navigation, and spacing. */
 :root {
   --nav-width: 1120px;
-  --site-accent: #117e9f;
-  --site-muted: #555e68;
-  --site-rule: #dce3e8;
+  --site-accent: #b6511d;
+  --site-muted: #655c55;
+  --site-rule: #e7ded7;
   --site-page-start: 1.25rem;
   --site-header-gap: 2.25rem;
   --site-section-gap: 3rem;
@@ -16,9 +16,9 @@ body {
 }
 
 body.dark {
-  --site-accent: #71c9e2;
-  --site-muted: #b8c1cc;
-  --site-rule: #3d4650;
+  --site-accent: #f0ad78;
+  --site-muted: #ccbfb5;
+  --site-rule: #4d4037;
 }
 
 .main {
@@ -141,10 +141,10 @@ body.dark {
   right: .35rem;
   bottom: .35rem;
   padding: .1rem .35rem;
-  border: 1px solid #dce3e8;
+  border: 1px solid #e7ded7;
   border-radius: 4px;
   background: #fff;
-  color: #117e9f;
+  color: #b6511d;
   font-size: .68rem;
   line-height: 1.6;
 }
@@ -163,7 +163,7 @@ body.dark {
   box-shadow: 0 16px 64px rgb(0 0 0 / .2);
   overflow: auto;
 }
-.image-viewer::backdrop { background: rgb(12 22 30 / .68); }
+.image-viewer::backdrop { background: rgb(30 20 12 / .68); }
 .image-viewer-header {
   display: flex;
   align-items: flex-start;

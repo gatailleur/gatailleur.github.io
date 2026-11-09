@@ -82,7 +82,7 @@
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 4px;
-  background: #1BA9D9;
+  background: #b6511d;
   color: white;
   font-size: 0.95rem;
   font-weight: 700;
@@ -90,7 +90,7 @@
 }
 
 .scholar-icon {
-  background: #1BA9D9;
+  background: #b6511d;
   color: white;
 }
 
@@ -101,9 +101,9 @@
 }
 
 .blue-link {
-  color: #1BA9D9;
+  color: #b6511d;
   text-decoration: underline;
-  text-decoration-color: #1BA9D9;
+  text-decoration-color: #b6511d;
   font-weight: inherit;
 }
 
@@ -115,11 +115,11 @@
 .doi-box {
   display: inline-block;
   padding: 0.25rem 0.55rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e7ded7;
   border-radius: 6px;
   font-size: 0.85rem;
   text-decoration: none;
-  color: #1BA9D9;
+  color: #b6511d;
   font-weight: 600;
 }
 
@@ -139,7 +139,7 @@
   align-items:center;
   gap:.55rem;
   padding:.75rem 1.2rem;
-  border:1px solid #e5e7eb;
+  border:1px solid #e7ded7;
   border-radius:12px;
   background:#fff;
   box-shadow:0 1px 2px rgba(0,0,0,.05);
@@ -149,11 +149,11 @@
   color:#111;
 }
 .link-box:hover{
-  border-color:#d1d5db;
+  border-color:#d7c9be;
   box-shadow:0 2px 6px rgba(0,0,0,.08);
   transform:translateY(-1px);
 }
-.link-highlight{ color:#1BA9D9; font-weight:600; }
+.link-highlight{ color:#b6511d; font-weight:600; }
 
 /* ========== Utilities / general ========== */
 .post-title:empty{ display:none; }
@@ -163,7 +163,7 @@
 
 /* Year headings (Talks) */
 .loose h3, .loose h4{
-  color:#1BA9D9;
+  color:#b6511d;
   font-weight:600;
   margin-top:1.5rem;
 }
@@ -194,7 +194,7 @@
 .pub-actions a{
   display:inline-block;
   padding:.35rem .6rem;
-  border:1px solid #e5e7eb;
+  border:1px solid #e7ded7;
   border-radius:.5rem;
   text-decoration:none;
   margin-right:.5rem;
