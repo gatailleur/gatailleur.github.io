@@ -1,0 +1,12 @@
+<dialog class="image-viewer" id="research-image-viewer" aria-labelledby="image-viewer-title">
+  <header class="image-viewer-header">
+    <h2 id="image-viewer-title">Research image</h2>
+    <button class="image-viewer-close" type="button" aria-label="Close enlarged image" autofocus>×</button>
+  </header>
+  <div class="image-viewer-frame">
+    <img class="image-viewer-image" alt="">
+  </div>
+  <a class="image-viewer-original" target="_blank" rel="noopener noreferrer">Open original image <span aria-hidden="true">↗</span></a>
+</dialog>
+{{- $viewer := resources.Get "js/research-image-viewer.js" | resources.Minify | fingerprint -}}
+<script defer src="{{ $viewer.RelPermalink }}" integrity="{{ $viewer.Data.Integrity }}" crossorigin="anonymous"></script>

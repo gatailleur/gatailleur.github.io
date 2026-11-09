@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="academic-page talks-page">
+  <header class="page-header academic-header">
+    <h1>{{ .Title }}</h1>
+    <nav class="academic-nav" aria-label="Talks by year">
+      {{ range .Params.years }}
+      <a href="#year-{{ .year }}">{{ .year }}</a>
+      {{ end }}
+    </nav>
+  </header>
+
+  {{ range .Params.years }}
+  <section class="talks-year" aria-labelledby="year-{{ .year }}">
+    <h2 class="talks-year-label" id="year-{{ .year }}">{{ .year }}</h2>
+    <ul class="talks-events" role="list">
+      {{ range .events }}
+      <li class="talks-event">
+        <div class="talks-event-info">
+          <h3>{{ .title }}</h3>
+          {{ with .institution }}<p class="talks-event-institution">{{ . }}</p>{{ end }}
+          {{ with .topic }}<p class="talks-event-topic">{{ . }}</p>{{ end }}
+        </div>
+        <p class="talks-location">{{ .location }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,18 @@
+<article class="research-paper{{ with .Params.image }} has-thumbnail{{ end }}">
+  <div class="research-paper-info">
+    <h3 class="research-paper-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ partial "research/paper-meta.html" . }}
+  </div>
+  {{ with .Params.image }}
+  <a class="research-thumbnail" href="{{ . | relURL }}" data-image-preview data-image-title="{{ $.Title }}" aria-label="Enlarge image for: {{ $.Title }}">
+    <img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async" width="176" height="128">
+    <span class="research-zoom-label" aria-hidden="true">View image <span>↗</span></span>
+  </a>
+  {{ end }}
+  <details class="research-abstract">
+    <summary>Abstract<span class="research-abstract-arrow" aria-hidden="true">↗</span></summary>
+    <div class="research-abstract-body">
+      {{ .RenderString (dict "display" "block") (index (split .RawContent "<!--more-->") 0) }}
+    </div>
+  </details>
+</article>

@@ -1,0 +1,253 @@
+/* Shared frame, navigation, and spacing. */
+:root {
+  --nav-width: 1120px;
+  --site-accent: #117e9f;
+  --site-muted: #555e68;
+  --site-rule: #dce3e8;
+  --site-page-start: 1.25rem;
+  --site-header-gap: 2.25rem;
+  --site-section-gap: 3rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.dark {
+  --site-accent: #71c9e2;
+  --site-muted: #b8c1cc;
+  --site-rule: #3d4650;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 2.5rem;
+}
+
+.header { color: var(--primary); }
+.nav {
+  align-items: center;
+  gap: .4rem 1.5rem;
+  padding: 1rem var(--gap);
+  line-height: 1.4;
+}
+.nav .logo,
+.nav #menu { margin: 0; }
+.nav .logo a {
+  color: var(--site-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav #menu {
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  overflow-x: visible;
+  white-space: normal;
+}
+#menu li + li { margin-inline-start: 0; margin-left: 0; }
+.nav #menu a {
+  padding: .55rem 0;
+  color: var(--site-muted);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.nav #menu a:hover { color: var(--site-accent); }
+.nav #menu .active {
+  padding-bottom: .25rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--site-accent);
+  font-weight: 500;
+}
+.nav a:focus-visible,
+#theme-toggle:focus-visible,
+.site-footer a:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.research-header,
+.academic-header {
+  margin: var(--site-page-start) 0 var(--site-header-gap);
+}
+.research-header h1,
+.academic-header h1 {
+  margin-bottom: .75rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+.research-nav,
+.academic-nav { gap: .5rem 1.5rem; }
+.research-nav a,
+.academic-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+}
+.home-profile { padding-top: var(--site-page-start); }
+.research-section + .research-section,
+.teaching-level + .teaching-level,
+.talks-year + .talks-year { margin-top: var(--site-section-gap); }
+
+/* Personal footer, with the same reading width as the page above it. */
+.site-footer {
+  flex: none;
+  width: 100%;
+  padding: 0 var(--gap) 1.25rem;
+  color: var(--site-muted);
+  text-align: left;
+}
+.site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--site-rule);
+}
+.site-footer-copyright { font-size: .78rem; }
+.site-footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border-bottom: 0;
+  color: inherit;
+  font-size: .78rem;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  border-bottom: 0;
+  color: var(--site-accent);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+/* Linked thumbnails keep working without JavaScript. */
+.research-thumbnail { position: relative; cursor: zoom-in; }
+.research-thumbnail:hover,
+.research-thumbnail:focus-visible { border-color: var(--research-accent); }
+.research-zoom-label {
+  position: absolute;
+  right: .35rem;
+  bottom: .35rem;
+  padding: .1rem .35rem;
+  border: 1px solid #dce3e8;
+  border-radius: 4px;
+  background: #fff;
+  color: #117e9f;
+  font-size: .68rem;
+  line-height: 1.6;
+}
+
+/* Native dialog provides keyboard containment and Escape to close. */
+.image-viewer {
+  width: min(1120px, calc(100vw - 3rem));
+  max-width: none;
+  max-height: calc(100dvh - 3rem);
+  margin: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--site-rule);
+  border-radius: 12px;
+  background: var(--theme);
+  color: var(--primary);
+  box-shadow: 0 16px 64px rgb(0 0 0 / .2);
+  overflow: auto;
+}
+.image-viewer::backdrop { background: rgb(12 22 30 / .68); }
+.image-viewer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.image-viewer-header h2 { padding-top: .4rem; font-size: 1rem; line-height: 1.5; }
+.image-viewer-close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--site-rule);
+  border-radius: 50%;
+  color: var(--primary);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.image-viewer-close:hover { color: var(--site-accent); }
+.image-viewer-frame { padding: .5rem; border-radius: 6px; background: #fff; }
+.image-viewer-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 14rem);
+  object-fit: contain;
+}
+.image-viewer-original {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 44px;
+  margin-top: .5rem;
+  color: var(--site-accent);
+  font-size: .85rem;
+}
+.image-viewer button:focus-visible,
+.image-viewer a:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 3px;
+}
+.image-viewer-open { overflow: hidden; }
+
+@media (max-width: 640px) {
+  :root {
+    --site-page-start: .75rem;
+    --site-header-gap: 1.75rem;
+    --site-section-gap: 2.5rem;
+  }
+  .nav { padding-block: .8rem; }
+  .nav #menu { width: 100%; gap: 1.25rem; }
+  .nav #menu a { font-size: .9rem; }
+  .research-nav,
+  .academic-nav { gap: .35rem 1rem; }
+  .site-footer-inner { align-items: flex-start; flex-direction: column; gap: 0; }
+  .research-thumbnail {
+    display: inline-flex;
+    justify-self: start;
+    width: auto;
+    height: auto;
+    min-height: 36px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .research-thumbnail img { display: none; }
+  .research-zoom-label {
+    position: static;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--research-accent);
+    font-size: .85rem;
+  }
+  .image-viewer {
+    width: calc(100vw - 1rem);
+    max-height: calc(100dvh - 1rem);
+    padding: .85rem;
+    border-radius: 8px;
+  }
+  .image-viewer-header { gap: .5rem; }
+  .image-viewer-header h2 { font-size: .9rem; }
+}

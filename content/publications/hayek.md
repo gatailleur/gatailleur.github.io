@@ -1,7 +1,7 @@
 ---
 title: "Théoriser les cryptomonnaies: un mirage hayékien?"
 authors: ["Gabriel Tailleur"]
-publication: "[french] Book chapter - Regards croisés sur Hayek"
+publication: "Regards croisés sur Hayek (book chapter, in French)"
 date: 2024-01-01
 draft: false
 status: "published"

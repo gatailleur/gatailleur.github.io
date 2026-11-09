@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="post-single research-single">
+  <a class="research-back" href="{{ "publications/" | relURL }}">← All research</a>
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ partial "research/paper-meta.html" . }}
+  </header>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

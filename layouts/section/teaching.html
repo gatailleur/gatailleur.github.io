@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="academic-page teaching-page">
+  <header class="page-header academic-header">
+    <h1>{{ .Title }}</h1>
+    <nav class="academic-nav" aria-label="Teaching levels">
+      {{ range .Params.levels }}
+      <a href="#{{ .id }}">{{ .title }}</a>
+      {{ end }}
+    </nav>
+  </header>
+
+  {{ range .Params.levels }}
+  <section class="teaching-level" aria-labelledby="{{ .id }}">
+    <h2 class="academic-section-title" id="{{ .id }}">{{ .title }}</h2>
+    <div class="teaching-courses">
+      {{ range .courses }}
+      <article class="teaching-course">
+        <p class="teaching-period">{{ .period }}</p>
+        <h3>{{ .title }}</h3>
+        <p class="teaching-institution">{{ .institution }}</p>
+        <p class="teaching-topics"><span>Topics</span>{{ .topics }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
+{{ end }}

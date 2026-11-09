@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="home-profile">
+  <header class="home-profile-hero">
+    {{ with .Params.profile }}
+    <img class="home-profile-portrait" src="{{ .portrait | relURL }}" alt="{{ site.Title }}" width="192" height="192" fetchpriority="high">
+    <div class="home-profile-intro">
+      <h1>{{ site.Title }}</h1>
+      <p class="home-profile-role">{{ .role }}</p>
+      <p class="home-profile-affiliation">{{ .chair }}<br>{{ .university }}</p>
+      <p class="home-profile-degree">{{ .degree }}</p>
+      <a class="home-profile-cv" href="{{ .cv }}" target="_blank" rel="noopener noreferrer">Download CV <span aria-hidden="true">↗</span><span class="home-profile-sr-only"> (opens in a new tab)</span></a>
+      <nav class="home-profile-links" aria-label="Contact and academic profiles">
+        <a href="mailto:{{ .email }}">Email</a>
+        <a href="{{ .scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar<span class="home-profile-sr-only"> (opens in a new tab)</span></a>
+        <a href="{{ .linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="home-profile-sr-only"> (opens in a new tab)</span></a>
+      </nav>
+    </div>
+    {{ end }}
+  </header>
+
+  <section class="home-profile-research" aria-labelledby="research-interests">
+    <h2 id="research-interests">Research</h2>
+    <ul class="home-profile-interests" aria-label="Research interests" role="list">
+      {{ range .Params.interests }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <div class="home-profile-bio">{{ .Content }}</div>
+  </section>
+</article>
+{{ end }}

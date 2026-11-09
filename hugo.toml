@@ -17,7 +17,7 @@ enableRobotsTXT = true
 # PaperMod general params (feel free to adjust later)
 [params]
   defaultTheme = "light"
-  description = "PhD candidate in economics specializing in NLP, political economy and central banking."
+  description = "Postdoctoral researcher in economics at the PcEn Chair, Paris 1 Panthéon-Sorbonne University. Research in natural language processing, political economy, and cinema."
   disableSpecial1stPost = true  # hides the big first-post card on home
   showReadingTime = false
   comments = false
@@ -41,5 +41,5 @@ enableRobotsTXT = true
 
   [[menu.main]]
     name = "CV"
-    url = "/files/cv.pdf"
+    url = "https://drive.google.com/file/d/1pzctGp7G6K8hUb-d9MPtJI8FOxiZNlN2/view?usp=sharing"
     weight = 4

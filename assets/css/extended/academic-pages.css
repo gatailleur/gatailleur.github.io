@@ -1,0 +1,193 @@
+/* Talks and Teaching share the hierarchy and blue tones used in Research. */
+.academic-page {
+  --academic-accent: #117e9f;
+  --academic-title: #165c73;
+  --academic-muted: #555e68;
+  --academic-rule: #dce3e8;
+  --academic-tint: #e9f6fb;
+  --academic-surface: #fff;
+  color: var(--primary);
+  padding-bottom: 1rem;
+}
+
+.dark .academic-page {
+  --academic-accent: #71c9e2;
+  --academic-title: #a3deef;
+  --academic-muted: #b8c1cc;
+  --academic-rule: #3d4650;
+  --academic-tint: #223b46;
+  --academic-surface: var(--entry);
+}
+
+.academic-header { margin: .75rem 0 2.75rem; }
+.academic-header h1 { margin-bottom: 1rem; }
+.academic-nav { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; }
+.academic-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--academic-muted);
+  font-size: .9rem;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: .3em;
+}
+.academic-nav a:hover {
+  color: var(--academic-accent);
+  text-decoration-color: currentColor;
+}
+.academic-nav a:focus-visible {
+  outline: 2px solid var(--academic-accent);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* Year markers sit beside an uninterrupted chronology of events. */
+.talks-year {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 0 2rem;
+}
+.talks-year + .talks-year { margin-top: 2.5rem; }
+.talks-year-label {
+  padding-top: 1.15rem;
+  color: var(--academic-accent);
+  font-size: 1.65rem;
+  line-height: 1.4;
+  font-weight: 600;
+  scroll-margin-top: 1.5rem;
+}
+.talks-events {
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 0 1.75rem;
+  border-left: 2px solid var(--academic-rule);
+  list-style: none;
+}
+.talks-event {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .6rem 1.5rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--academic-rule);
+}
+.talks-event::before {
+  content: "";
+  position: absolute;
+  top: 1.85rem;
+  left: calc(-1.75rem - 5px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--academic-accent);
+}
+.talks-event-info { min-width: 0; }
+.talks-event h3 {
+  color: var(--academic-title);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.talks-event-topic,
+.talks-event-institution {
+  margin-top: .35rem;
+  color: var(--academic-muted);
+  font-size: .93rem;
+  line-height: 1.65;
+}
+.talks-location {
+  margin-top: .1rem;
+  padding: .2rem .6rem;
+  border-radius: 5px;
+  background: var(--academic-tint);
+  color: var(--academic-accent);
+  font-size: .8rem;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* Course cards expose level, period, institution, then subject matter. */
+.teaching-level + .teaching-level { margin-top: 3.5rem; }
+.academic-section-title {
+  padding-bottom: .85rem;
+  border-bottom: 2px solid var(--academic-accent);
+  color: var(--academic-accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  scroll-margin-top: 1.5rem;
+}
+.teaching-courses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.teaching-course {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--academic-rule);
+  border-radius: 10px;
+  background: var(--academic-surface);
+}
+.teaching-period {
+  display: inline-block;
+  margin-bottom: .8rem;
+  padding: .15rem .55rem;
+  border-radius: 4px;
+  background: var(--academic-tint);
+  color: var(--academic-accent);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.teaching-course h3 {
+  color: var(--academic-title);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.teaching-institution {
+  margin-top: .55rem;
+  color: var(--academic-muted);
+  font-size: .9rem;
+  line-height: 1.65;
+}
+.teaching-topics {
+  margin-top: 1rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--academic-rule);
+  font-size: .9rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.teaching-topics span {
+  display: block;
+  margin-bottom: .25rem;
+  color: var(--academic-muted);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .talks-event { grid-template-columns: minmax(0, 1fr); }
+  .talks-location { justify-self: start; white-space: normal; }
+}
+
+@media (max-width: 640px) {
+  .academic-header { margin-bottom: 2rem; }
+  .academic-header h1 { font-size: 2rem; }
+  .academic-nav { gap: .5rem 1rem; }
+  .talks-year { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .talks-year-label { padding-top: 0; font-size: 1.4rem; }
+  .talks-events { padding-left: 1.25rem; }
+  .talks-event::before { left: calc(-1.25rem - 5px); }
+  .teaching-courses { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .teaching-course { padding: 1.25rem; }
+  .teaching-level + .teaching-level { margin-top: 2.5rem; }
+}

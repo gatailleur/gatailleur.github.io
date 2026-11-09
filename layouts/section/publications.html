@@ -1,110 +1,45 @@
 {{ define "main" }}
-<main class="main">
-  <header class="page-header">
+{{ $working := where .RegularPages "Params.status" "working-paper" }}
+{{ $published := where .RegularPages "Params.status" "published" }}
+<div class="research-page">
+  <header class="page-header research-header">
     <h1>{{ .Title }}</h1>
+    <nav class="research-nav" aria-label="Research sections">
+      {{ if $working }}<a href="#working-papers">Working papers</a>{{ end }}
+      {{ if .Params.work_in_progress }}<a href="#work-in-progress">Work in progress</a>{{ end }}
+      {{ if $published }}<a href="#published-papers">Published papers</a>{{ end }}
+    </nav>
   </header>
 
-  {{ $pages := .Pages }}
-  {{ $wip := where $pages "Params.status" "wip" }}
-  {{ $pub := where $pages "Params.status" "published" }}
-
-  {{ if gt (len $wip) 0 }}
-    <h2 class="pub-section">Work in progress</h2>
-    {{ range $wip.ByDate.Reverse }}
-      <article class="post-entry pub-list-item">
-        {{ $p := . }}
-        {{ with $p.Params.image }}
-          <div class="pub-thumb">
-            <a href="{{ $p.RelPermalink }}"><img src="{{ . | relURL }}" alt="Thumbnail for {{ $p.Title }}"></a>
-          </div>
-        {{ end }}
-
-        <div class="pub-info">
-          <header class="entry-header">
-            <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            {{ with $p.Params.subtitle }}
-              <div class="pub-subtitle">{{ . }}</div>
-            {{ end }}
-
-            {{ with $p.Params.ssrn }}
-              <div class="pub-mini-actions">
-                <a href="{{ . }}" target="_blank" rel="noopener" class="wp-link">
-                  🚨 <span class="wp-text">Check out the working paper!</span>
-                </a>
-              </div>
-            {{ end }}
-          </header>
-          
-{{ with $p.Params.coauthors_line }}
-  <div class="pub-journal">
-    <span class="pub-label">{{ . }}</span>
-  </div>
-{{ end }}
-          <section class="entry-content unclamp">
-            <details class="abs-toggle">
-              <summary>Abstract <span class="abs-arrow">▸</span></summary>
-              <div class="abs-body">{{ .Summary | plainify }}</div>
-            </details>
-          </section>
-        </div>
-      </article>
+  {{ if $working }}
+  <section class="research-section" aria-labelledby="working-papers">
+    <h2 class="research-section-title" id="working-papers">Working papers</h2>
+    {{ range $working.ByWeight }}
+      {{ partial "research/paper.html" . }}
     {{ end }}
+  </section>
   {{ end }}
 
-  {{ if gt (len $pub) 0 }}
-    <h2 class="pub-section">Published papers</h2>
-    {{ range $pub.ByDate.Reverse }}
-      <article class="post-entry pub-list-item">
-        {{ $p := . }}
-        {{ with $p.Params.image }}
-          <div class="pub-thumb">
-            <a href="{{ $p.RelPermalink }}"><img src="{{ . | relURL }}" alt="Thumbnail for {{ $p.Title }}"></a>
-          </div>
-        {{ end }}
-
-        <div class="pub-info">
-          <header class="entry-header">
-            <h2 class="entry-title">
-              <a href="{{ .RelPermalink }}">
-                {{ .Title }}
-                {{ with .Params.coauthors }}
-                  <span class="coauthor-inline"> {{ . }}</span>
-                {{ end }}
-              </a>
-            </h2>
-
-            {{ with .Date }}
-              <div class="entry-meta">{{ .Format "2006" }}</div>
-            {{ end }}
-          </header>
-
-          {{ with $p.Params.publication }}
-          {{ with $p.Params.coauthors_line }}
-  <div class="pub-journal">
-    <span class="pub-label">{{ . }}</span>
-  </div>
-{{ end }}
-  <div class="pub-journal">
-    <span class="pub-label">Published in {{ . }}</span>
-    {{ with $p.Params.links }}
-      {{ range . }}
-        {{ if eq .name "DOI" }}
-          <a href="{{ .url }}" target="_blank" rel="noopener" class="doi-box">DOI</a>
-        {{ end }}
-      {{ end }}
+  {{ with .Params.work_in_progress }}
+  <section class="research-section" aria-labelledby="work-in-progress">
+    <h2 class="research-section-title" id="work-in-progress">Work in progress</h2>
+    {{ range . }}
+    <article class="research-project">
+      <h3>{{ .title }}</h3>
+      {{ with .coauthors_line }}<p class="research-coauthors">{{ . }}</p>{{ end }}
+    </article>
     {{ end }}
-  </div>
-{{ end }}
-
-          <section class="entry-content unclamp">
-            <details class="abs-toggle">
-              <summary>Abstract <span class="abs-arrow">▸</span></summary>
-              <div class="abs-body">{{ .Summary | plainify }}</div>
-            </details>
-          </section>
-        </div>
-      </article>
-    {{ end }}
+  </section>
   {{ end }}
-</main>
+
+  {{ if $published }}
+  <section class="research-section" aria-labelledby="published-papers">
+    <h2 class="research-section-title" id="published-papers">Published papers</h2>
+    {{ range $published.ByDate.Reverse }}
+      {{ partial "research/paper.html" . }}
+    {{ end }}
+  </section>
+  {{ end }}
+</div>
+{{ partial "research/image-viewer.html" . }}
 {{ end }}

@@ -1,0 +1,16 @@
+{{ with .Params.coauthors_line }}
+<p class="research-coauthors">{{ . }}</p>
+{{ end }}
+{{ with .Params.publication }}
+<p class="research-venue">{{ . }}{{ with $.Date }} <span class="research-year">· {{ .Format "2006" }}</span>{{ end }}</p>
+{{ end }}
+{{ with .Params.paper_url }}
+<p class="research-availability">Working paper available <a class="research-paper-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Open working paper: {{ $.Title }} (new tab)">here<span aria-hidden="true"> ↗</span></a></p>
+{{ end }}
+{{ with .Params.links }}
+<div class="research-links">
+  {{ range . }}
+  <a href="{{ .url | relURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}: {{ $.Title }} (new tab)">{{ .name }} <span aria-hidden="true">↗</span></a>
+  {{ end }}
+</div>
+{{ end }}
